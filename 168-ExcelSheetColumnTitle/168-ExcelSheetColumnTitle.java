@@ -1,0 +1,18 @@
+// Last updated: 09/07/2026, 09:51:30
+class Solution {
+    public String convertToTitle(int columnNumber) {
+        StringBuilder result = new StringBuilder();
+        
+        while (columnNumber > 0) {
+            columnNumber--;  // important step
+            
+            int rem = columnNumber % 26;
+            char ch = (char) ('A' + rem);
+            
+            result.append(ch);
+            columnNumber /= 26;
+        }
+        
+        return result.reverse().toString();
+    }
+}
